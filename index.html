@@ -250,38 +250,6 @@ footer span { color: var(–gold); }
     <div class="countdown-gone" id="countdown-gone" style="display:none;">✈️ We're in Bali!</div>
   </div>
 
-  <script>
-    (function() {
-      // Departure: May 2, 2026 at 7:05 AM Portland time (America/Los_Angeles)
-      var departure = new Date('2026-05-02T07:05:00-07:00');
-
-      function tick() {
-        var now = new Date();
-        var diff = departure - now;
-
-        if (diff <= 0) {
-          document.getElementById('countdown').style.display = 'none';
-          document.getElementById('countdown-gone').style.display = 'block';
-          return;
-        }
-
-        var totalMins  = Math.floor(diff / 60000);
-        var totalHours = Math.floor(totalMins / 60);
-        var totalDays  = Math.floor(totalHours / 24);
-        var weeks      = Math.floor(totalDays / 7);
-        var days       = totalDays % 7;
-        var mins       = totalMins % 60;
-
-        document.getElementById('cd-weeks').textContent = weeks;
-        document.getElementById('cd-days').textContent  = days;
-        document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
-      }
-
-      tick();
-      setInterval(tick, 10000); // update every 10 seconds
-    })();
-  </script>
-
   <div style="margin-top:32px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; animation: fadeUp 0.8s 0.4s ease both;">
     <span style="background:rgba(44,96,64,0.6); border:1px solid rgba(201,168,76,0.3); border-radius:20px; padding:6px 16px; font-size:11px; letter-spacing:2px; color:var(--muted-gold);">🏖 Seminyak · May 3–5</span>
     <span style="background:rgba(44,96,64,0.6); border:1px solid rgba(201,168,76,0.3); border-radius:20px; padding:6px 16px; font-size:11px; letter-spacing:2px; color:var(--muted-gold);">🌿 Ubud · May 5–10</span>
@@ -291,6 +259,32 @@ footer span { color: var(–gold); }
     Scroll to explore
   </div>
 </section>
+
+<script>
+  (function() {
+    var departure = new Date('2026-05-02T07:05:00-07:00');
+    function tick() {
+      var now = new Date();
+      var diff = departure - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').style.display = 'none';
+        document.getElementById('countdown-gone').style.display = 'block';
+        return;
+      }
+      var totalMins  = Math.floor(diff / 60000);
+      var totalHours = Math.floor(totalMins / 60);
+      var totalDays  = Math.floor(totalHours / 24);
+      var weeks      = Math.floor(totalDays / 7);
+      var days       = totalDays % 7;
+      var mins       = totalMins % 60;
+      document.getElementById('cd-weeks').textContent = weeks;
+      document.getElementById('cd-days').textContent  = days;
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 10000);
+  })();
+</script>
 
 <!-- NAV -->
 
