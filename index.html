@@ -38,14 +38,16 @@
     --accent-light: #EDE0C8;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--warm-white); font-family: 'DM Sans', sans-serif; color: var(--ink); overflow-x: hidden; padding-bottom: env(safe-area-inset-bottom); }
+  body { background: #2A4030; font-family: 'DM Sans', sans-serif; color: var(--ink); overflow-x: hidden; padding-bottom: env(safe-area-inset-bottom); }
 
 /* HERO */
 .hero {
-background: var(–deep-green);
+background: #2A4030;
+background-color: #2A4030;
 min-height: 100vh;
+height: 100vh;
 display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-position: relative; overflow: hidden; padding: 60px 20px;
+position: relative; overflow: hidden; padding: 60px 20px 100px;
 }
 .hero::before {
 content: ‘’; position: absolute; inset: 0;
@@ -286,8 +288,8 @@ footer span { color: var(–gold); }
   })();
 </script>
 
+<div style="background: var(--warm-white);">
 <!-- NAV -->
-
 <nav class="nav" id="mainNav">
   <button class="nav-btn active" onclick="showSection('itinerary', this)">Itinerary</button>
   <button class="nav-btn" onclick="showSection('flights', this)">Flights</button>
@@ -1305,5 +1307,6 @@ footer span { color: var(–gold); }
   updateProgress();
 </script>
 
+</div>
 </body>
 </html>
